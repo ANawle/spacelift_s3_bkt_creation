@@ -3,15 +3,12 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "hamrobkt"  # Replace with a unique bucket name
-
+  bucket = "hamribkt"  # Replace with your unique bucket name
   tags = {
     Name        = "MyS3Bucket"
     Environment = "Development"
   }
-}
 
-resource "aws_s3_bucket_acl" "my_bucket_acl" {
-  bucket = aws_s3_bucket.my_bucket.bucket
-  acl    = "private"
+  block_public_acls = false  # Allow ACLs on the bucket
+  block_public_policy = false  # Allow public bucket policies if needed
 }
