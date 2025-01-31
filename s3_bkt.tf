@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "An!#%"  # Replace with a unique bucket name
+  bucket = "mazibkt"  # Replace with a unique bucket name
 
   tags = {
     Name        = "MyS3Bucket"
