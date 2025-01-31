@@ -3,14 +3,16 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "abucket" {
-  bucket = "bhadhlya"  # Replace with your unique bucket name
+  bucket = "nawlbkt"  # Replace with your unique bucket name
   tags = {
     Name        = "MyS3Bucket"
     Environment = "Development"
   }
 
-  block_public_acls = false
-  block_public_policy = false
+  block_public_access {
+    block_public_acls = false  # Allow ACLs
+    block_public_policy = false  # Allow public policies
+  }
 }
 
 resource "aws_s3_bucket_acl" "abucket_acl" {
