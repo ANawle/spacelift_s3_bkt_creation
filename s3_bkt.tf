@@ -4,7 +4,7 @@ provider "aws" {
 
 # S3 Bucket Creation without acl argument
 resource "aws_s3_bucket" "sbucket" {
-  bucket = "AVbkt"
+  bucket = "avibkt"
   # Removed acl argument as it's deprecated
 }
 
